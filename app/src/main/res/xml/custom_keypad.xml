@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:horizontalGap="5dp"
+    android:verticalGap="5dp"
+    android:keyHeight="60dp"
+    android:keyWidth="10%p">
+
+    <Row
+        android:keyWidth="10%p">
+        <Key android:keyLabel="Q" android:keyEdgeFlags="left"/>
+        <Key android:keyLabel="W"/>
+        <Key android:keyLabel="E"/>
+        <Key android:keyLabel="R"/>
+        <Key android:keyLabel="T"/>
+        <Key android:keyLabel="Y"/>
+        <Key android:keyLabel="U"/>
+        <Key android:keyLabel="I"/>
+        <Key android:keyLabel="O"/>
+        <Key android:keyLabel="P" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row
+        android:keyWidth="11.11%p">
+        <Key android:keyLabel="A" android:keyEdgeFlags="left"/>
+        <Key android:keyLabel="S"/>
+        <Key android:keyLabel="D"/>
+        <Key android:keyLabel="F"/>
+        <Key android:keyLabel="G"/>
+        <Key android:keyLabel="H"/>
+        <Key android:keyLabel="J"/>
+        <Key android:keyLabel="K"/>
+        <Key android:keyLabel="L" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row
+        android:keyWidth="14.28%p">
+        <Key android:keyLabel="Z" android:keyEdgeFlags="left"/>
+        <Key android:keyLabel="X"/>
+        <Key android:keyLabel="C"/>
+        <Key android:keyLabel="V"/>
+        <Key android:keyLabel="B"/>
+        <Key android:keyLabel="N"/>
+        <Key android:keyLabel="M" android:keyEdgeFlags="right"/>
+    </Row>
+
+
+</Keyboard>
