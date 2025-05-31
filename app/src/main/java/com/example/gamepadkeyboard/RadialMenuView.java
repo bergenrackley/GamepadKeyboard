@@ -49,7 +49,6 @@ public class RadialMenuView extends View {
     }
 
     private void init() {
-        setMenuItems(Arrays.asList("q", "w", "e", "r", "t", "y", "u", "i", "o", "p"));
         hoverSlicePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         hoverSlicePaint.setStyle(Paint.Style.FILL);
         hoverSlicePaint.setColor(Color.GRAY); // Hover color
@@ -169,7 +168,6 @@ public class RadialMenuView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Log.d("RadialMenuView", "Draw");
 
         if (menuItems.isEmpty() || outerRadius <= 0) {
             return;
@@ -224,5 +222,11 @@ public class RadialMenuView extends View {
             centerPaint.setStyle(Paint.Style.FILL);
             canvas.drawCircle(centerX, centerY, actualInnerRadius, centerPaint);
         }
+    }
+
+    public String getHoveredKey() {
+        if (hoveredSliceIndex >= 0 && hoveredSliceIndex < menuItems.size())
+            return this.menuItems.get(hoveredSliceIndex);
+        else return null;
     }
 }

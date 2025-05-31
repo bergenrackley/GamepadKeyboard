@@ -15,43 +15,34 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
 
-    <android.inputmethodservice.KeyboardView
-        android:id="@+id/keyboard_view"
-        android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:keyBackground="@android:color/black"
-    android:keyPreviewLayout="@layout/custom_keyboard_preview"
-    android:keyTextColor="@android:color/white"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent" />
+    <!--    <android.inputmethodservice.KeyboardView-->
+    <!--        android:id="@+id/keyboard_view"-->
+    <!--        android:layout_width="0dp"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:keyBackground="@android:color/black"-->
+    <!--    android:keyPreviewLayout="@layout/custom_keyboard_preview"-->
+    <!--    android:keyTextColor="@android:color/white"-->
+    <!--    app:layout_constraintTop_toTopOf="parent"-->
+    <!--    app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--    app:layout_constraintStart_toStartOf="parent"-->
+    <!--    app:layout_constraintEnd_toEndOf="parent" />-->
 
     <com.example.gamepadkeyboard.RadialMenuView
-        android:id="@+id/radial_menu"
+        android:id="@+id/radial_menu_left"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/vertical_center_guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.gamepadkeyboard.JoystickCircleView
-        android:id="@+id/jscv_left"
+    <com.example.gamepadkeyboard.RadialMenuView
+        android:id="@+id/radial_menu_right"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/radial_menu"
-        app:layout_constraintEnd_toEndOf="@id/radial_menu"
-        app:layout_constraintStart_toStartOf="@id/radial_menu"
-        app:layout_constraintTop_toTopOf="@id/radial_menu" />
-
-    <com.example.gamepadkeyboard.JoystickCircleView
-        android:id="@+id/jscv_right"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/keyboard_view"
-        app:layout_constraintBottom_toBottomOf="@id/keyboard_view"
-        app:layout_constraintStart_toStartOf="@id/vertical_center_guideline"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vertical_center_guideline"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
