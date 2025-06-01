@@ -29,6 +29,7 @@ public class CustomKeyboardApp extends InputMethodService {
     private int layerIndex;
     private final ObjectMapper objectMapper = new ObjectMapper();
     private List<RadialMenuSet> menuSets;
+    private static final double deadZoneRadius = 0.1;
 
 
     @Override
@@ -292,8 +293,19 @@ public class CustomKeyboardApp extends InputMethodService {
             float y = event.getAxisValue(MotionEvent.AXIS_Y);
             float rx = event.getAxisValue(MotionEvent.AXIS_Z);
             float ry = event.getAxisValue(MotionEvent.AXIS_RZ);
-            setCursorPos(radialMenuViewLeft, x, y);
-            setCursorPos(radialMenuViewRight, rx, ry);
+
+            if (rx > deadZoneRadius || ry > deadZoneRadius) {
+                setCursorPos(radialMenuViewLeft, x, y);
+                //setCursorPos(radialMenuViewRight, rx, ry);
+
+                double angleRadians = Math.atan2(rx, ry);
+                float angleDegrees = ((180 - (float)Math.toDegrees(angleRadians) + 360) % 360);
+                double sliceDegrees = 360.0 / (double)menuSets.size();
+                int slice = (int)Math.floor(angleDegrees / sliceDegrees);
+                layerIndex = slice;
+                menuUpdater();
+                return true;
+            }
 
             dpadHandler(Math.round(event.getAxisValue(MotionEvent.AXIS_HAT_X)), Math.round(event.getAxisValue(MotionEvent.AXIS_HAT_Y)));
             return true;
